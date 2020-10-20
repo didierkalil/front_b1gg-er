@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/png" href="favicon.png" sizes="144x144"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0, viewport-fit=cover" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style_administrar.css">
+  <title>b1gg-er</title>
+</head>
+
+<body>
+    <main>
+      <div class="contenedor">
+        <nav class="navegacion">
+            <nav class ="menu-movil">
+               <ul class="lista-menu-movil">
+                  <li class="item-movil" id="menu-movil"><a href="#" class="item-movil-link"><i class="large material-icons">menu</i></a></li>
+               </ul>
+               <h2 class="titulo_menumovil">Administrar</h2>
+            </nav>
+
+            <div class="panel-menu-movil activo" id="panelcito">
+           
+              <ul class="lista-navegacion">
+                  <li class="item-navegacion"><a href="index.html" class="item-navegacion-link"><i class="large material-icons">power</i>Mis dispositivos</a></li>
+                  <li class="item-navegacion" ><a href="administrar.html" class="item-navegacion-link"><i class="large material-icons">settings_input_component</i>Administrar</a></li>
+                  <li class="item-navegacion" ><a href="configuracion.html" class="item-navegacion-link"><i class="large material-icons">settings</i>Configuración</a></li>
+                  <li class="item-navegacion"><a href="#" class="item-navegacion-link"><i class="large material-icons">insert_chart</i>Análizis de datos</a></li>
+              </ul>
+  
+            </div>
+        </nav>
+        <div class="contenedor-administrar">
+
+          <section class="dispositivos_disponibles">
+            <div class="disponibles_nombreytipo">
+               <h2>Dispositivos disponibles</h2>
+               
+               <div class="nombre">
+                  <label><h2>Nombre:</h2> </label>
+                  <input class="input_nombre" type="text" style="outline: none;" id="inputado"></input>
+               </div>
+
+               <div class="tipo">
+                 <label><h2>Tipo:</h2> </label>
+                 <select id="select_type" class="selector_tipo">
+                    <!-- <option selected disabled hidden>Seleccionar tipo...</option> -->
+                    <option value="1" selected>Interruptor</option>
+                    <option value="2">Sensor</option>
+                 </select>
+               </div>
+               <button class="disponiblesmovil_continuar" id="disponiblesmovil_continuar">Continuar</button>
+               <button class="disponibles_agregar" id="disponibles_agregar">Agregar</button>
+            </div>
+
+            <select id="dispositivos_disponibles" name="dispositivos" size="3" onchange="">
+                <option value="Televisor">Televisor</option>
+                <option value="luz-led">Luz-led</option>
+                <option value="heladera">Heladera</option>
+            </select>
+            <div class="disponibles_botones">
+             <button class="disponibles_eliminar" id="disponibles_eliminar">Eliminar</button>
+             <button class="disponiblesmovil_agregar" id="disponiblesmovil_agregar">Agregar</button>
+            </div>
+          </section >
+
+
+          <section class="intermedio">
+            <div class="contenedor_intermedio">
+                  <img src="bigger.png" alt="rostro_robot_vestido" width="225">
+                  <button id="agregar_misdispositivo">Agregar a mis dispositivos</button>
+            </div>
+          </section>
+
+
+          
+          <section class="mis_dispositivos">
+            <div class="misdispositivos_nombreytipo">
+              <h2>Mis dispositivos</h2>
+              
+              <div class="nombre">
+                 <label><h2>Nombre:</h2> </label>
+                 <input class="input_nombre" type="text" style="outline: none;" id="misdispositivos_inputbuscar"></input>
+              </div>
+
+              <div class="tipo">
+                <label><h2>Tipo:</h2> </label>
+                <select id="misdispositivos_selecttype" class="selector_tipo">
+                   <!-- <option selected disabled hidden>Seleccionar tipo...</option> -->
+                   <option value="1" >Interruptor</option>
+                   <option value="2">Sensor</option>
+                   <option value="3" selected>Todos</option>
+                </select>
+              </div>
+              <button class="misdispositivos_volver" id="misdispositivos_volver">Volver</button>
+              <button class="misdispositivos_buscar" id="misdispositivos_filtrar">Filtrar</button>
+           </div>
+
+           <select id="mis_dispositivos" name="dispositivos" size="3" onchange="">
+            <option value="Televisor">Televisor</option>
+            <option value="luz-led">Luz-led</option>
+            <option value="heladera">Heladera</option>
+           </select>
+           <div class="misdispositivos_botones">
+            <button class="misdispositivos_eliminar" id="misdispositivos_eliminar">Eliminar</button>
+            <button class="misdispositivos_guardar" id="misdispositivos_guardar" onclick="location.href='#modal_guardar'" >Guardar</button>
+           </div>
+
+
+          </section>
+
+
+        </div>
+     
+        
+     
+      <footer>&copy; 2020 B1gg-er</footer>
+    </div>
+    </main>
+    
+    <!-- Ventana modal para guardar los datos en el servidor -->
+    <div id="modal_guardar" class="modal_guardar">
+      <div class="modal_guardar_contenido">
+        <p>Está a punto de guardar los datos, deséa continuar?</p>
+        <button style="margin-top: 10px; font-size: 2em; color: white; padding: 3px; width: 2em; float: left;" id="guardar_si">Si</button>
+        <button style="margin-top: 10px; font-size: 2em; color: white; padding: 3px; width: 2em; float: right;" onclick="location.href='#'" >No</button>
+      </div>  
+    </div>
+
+
+      <!-- Ventana modal para agregar dispositivo disponible en caso de error -->
+      <div id="modal_erroragregar" class="modal_erroragregar">
+        <div class="modal_erroragregar_contenido">
+          <p>Aseguresé de asignar un nombre al dispositivo</p>
+          <button style="margin-top: 10px; font-size: 2em; color: white; padding: 3px; width: 2em; float: left;" onclick="location.href='#'" >OK</button>
+        </div>  
+        
+      </div>
+
+
+
+      <!--************************ zona de javascript*********************************** -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+       // Funciones para el menu movil
+        $('#menu-movil').click(function(){
+       // $('#panelcito').attr("class", "");
+       const panel = document.querySelector('.panel-menu-movil');
+       panel.classList.toggle('activo');
+   
+       });
+
+
+       // Funciones para el boton movil que agrega dispositivos disponibles
+       $('#disponiblesmovil_agregar').click(function(){
+        var str = $('#dispositivos_disponibles').find("option:selected").val();
+          // Quito los espacios iniciales vacios al nombre
+          str = str.trim();
+          // Me aseguro que el usuario ingrese un dato al input
+          if(!str || 0 === str.length) {
+            return;
+          }
+         
+          $('#mis_dispositivos').append($('<option />', {
+          text: $("#dispositivos_disponibles").find("option:selected").val(),
+          value: $("#dispositivos_disponibles").find("option:selected").val(),
+          }));
+          
+
+           $("#dispositivos_disponibles").find("option:selected").remove(); 
+       
+       });
+
+       // Funciones para el boton movil que salta a la siguiente etapa en el agregado de dispositivos
+         $('#disponiblesmovil_continuar').click(function(){
+       const displonibles = document.querySelector('.dispositivos_disponibles');
+       displonibles.classList.add('esconder_disponibles');
+
+       const misdispositivos = document.querySelector('.mis_dispositivos');
+       misdispositivos.classList.add('aparecer_misdispositivos');
+       
+       });
+
+       // Funciones para el boton movil "volver" que regresa a dispositivos disponibles
+       $('#misdispositivos_volver').click(function(){
+       const volver = document.querySelector('.dispositivos_disponibles');
+       volver.classList.remove('esconder_disponibles');
+
+
+       const misdispositivos = document.querySelector('.mis_dispositivos');
+       misdispositivos.classList.remove('aparecer_misdispositivos');
+       
+       });
+
+       // Funciones para el boton "eliminar" de la zona dispositivos disponibles
+       $('#disponibles_eliminar').click(function(){
+       $("#dispositivos_disponibles").find("option:selected").remove(); 
+       });
+
+       // Funciones para el boton "Agregar" de la zona dispositivos disponibles
+       $('#disponibles_agregar').click(function(){
+            var str = $('#inputado').val();
+            // Quito los espacios iniciales vacios al nombre
+            str = str.trim();
+            // Me aseguro que el usuario ingrese un dato al input
+            if(!str || 0 === str.length) {
+              // alert("Aseguresé de asignar un nombre al dispositivo");
+              location.href='#modal_erroragregar';
+              return;
+            }     
+            // Agrego la opción al select
+            $('#dispositivos_disponibles').append($('<option />', {
+            text: ($('#inputado').val()),
+            value: ($('#inputado').val()),
+            }));
+
+            // limpio el input una vez agregado el dispositivo disponible
+            $('#inputado').val("");
+
+       });
+
+
+       // Funciones para el boton "Agregar a mis dispositivos" de la zona dispositivos disponibles
+       $('#agregar_misdispositivo').click(function(){
+         
+         var str = $('#dispositivos_disponibles').find("option:selected").val();
+          // Quito los espacios iniciales vacios al nombre
+          str = str.trim();
+          // Me aseguro que el usuario ingrese un dato al input
+          if(!str || 0 === str.length) {
+            return;
+          }
+         
+          $('#mis_dispositivos').append($('<option />', {
+          text: $("#dispositivos_disponibles").find("option:selected").val(),
+          value: $("#dispositivos_disponibles").find("option:selected").val(),
+          }));
+          
+
+           $("#dispositivos_disponibles").find("option:selected").remove(); 
+         
+       });
+
+
+        // Funciones para el boton "eliminar de mis dispositivos" y devolver a la zona dispositivos disponibles
+       $('#misdispositivos_eliminar').click(function(){
+         
+         var str = $('#mis_dispositivos').find("option:selected").val();
+          // Quito los espacios iniciales vacios al nombre
+          str = str.trim();
+          // Me aseguro que el usuario ingrese un dato al input
+          if(!str || 0 === str.length) {
+            return;
+          }
+         
+          $('#dispositivos_disponibles').append($('<option />', {
+          text: $("#mis_dispositivos").find("option:selected").val(),
+          value: $("#mis_dispositivos").find("option:selected").val(),
+          }));
+          
+
+           $("#mis_dispositivos").find("option:selected").remove(); 
+         
+       });
+
+
+         // Funciones para el boton "eliminar de mis dispositivos" y devolver a la zona dispositivos disponibles
+         $('#guardar_si').click(function(){
+         
+          // LLamado al servicio que guarda el contenido de los datos
+          alert('llamado al servicio que guarda los datos en servidor');
+          // Se procede a desactivar la ventana modal
+          location.href='#';
+         
+         });
+
+
+
+         // Funciones para el boton "filtrar de mis dispositivos"
+         $('#misdispositivos_filtrar').click(function(){
+            // Se procede a filtrar en la lista de jsons las coincidencias solicitadas
+            var nombre;
+            var tipo;
+            alert('Ejecución de la función de filtro');
+        
+         });
+
+
+
+
+
+    </script>
+
+  </body>
+</html>

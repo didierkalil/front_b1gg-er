@@ -1,0 +1,568 @@
+
+/* .supra_contenedor{
+    display: block;
+    height: 100%;
+ 
+    
+ 
+    
+  
+
+} */
+
+.misdispositivos_guardar{
+    display: block;
+    float: right;
+    margin-top: 10px;
+    
+}
+
+/* 
+.infra_contenedor{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+   
+  align-items: flex-end; 
+  position: relative;
+
+} */
+
+.contenedor-configuracion{
+    
+    width: 100%;
+    min-height: 100%; 
+    padding: 30px 40px;
+    display: flex;
+    justify-content: center; 
+    align-items: flex-start;
+    background:linear-gradient(-30deg, #3aa4b7 0%, #f40303 50%, #262626 50%, #607d8b 100%);
+   
+ 
+}
+
+
+
+
+
+
+.misdispositivos_nombreytipo > h2{
+    text-shadow: 5px 5px 5px black;  
+}
+
+
+.input_nombre{
+    float: right;
+    width: 60%;
+    font-size: 23px; 
+    border-radius: 5px;
+    color:white;
+    /* border: 1px solid rgba(255,255,255,0.2); */
+    background: transparent;
+    box-shadow: inset 0 0 25px rgba(0,0,0,0.2);
+
+}
+
+.selector_tipo{
+    float: right;
+    width: 60%;
+    font-size: 23px; 
+    border-radius: 5px;
+    color:white;
+    /* border: 1px solid rgba(255,255,255,0.2); */
+    background: transparent;
+    box-shadow: inset 0 0 25px rgba(0,0,0,0.2);
+}
+
+.selector_tipo option{
+    background-color: rgba(16, 16, 17, 0.705);
+    font-size: 0.8em;
+}
+
+.misdispositivos_nombreytipo {
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.misdispositivos_nombreytipo h2 {
+    padding-bottom: 13px;
+  
+}
+
+.nombre, .tipo{
+    width: 100%;
+    display: flex; 
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.input_nombre, #misdispositivos_selecttype  {
+    float: right;
+    width: 60%;
+    font-size: 23px; 
+   
+}
+
+.misdispositivos_buscar{
+    float: right;
+    font-size: 23px;
+    padding: 3px;
+    margin-bottom: 10px;
+}
+
+.misdispositivos_volver{
+    display: none;
+    float: left;
+    font-size: 23px;
+    padding: 3px;
+    margin-bottom: 10px;
+}
+
+#mis_dispositivos{
+    margin-right: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    font-size: 1.5em;
+    color: white;
+    outline: none;
+    height: 295px;
+    background: transparent;
+    box-shadow: inset 0 0 25px rgba(0,0,0,0.2);
+    position: relative;
+
+    
+}
+
+
+ #mis_dispositivos::after {
+    content:'';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    padding: 10px; 
+    border-radius: 5px; 
+    pointer-events: none;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.3)0%, rgba(255,255,255,0.1)15%, transparent 50%, transparent 85%, rgba(255,255,255,0.1)100%);
+}
+
+.misdispositivos_botones{
+   
+    flex-direction: row;
+    justify-content: flex-start;
+    
+}
+
+.misdispositivos_botones button{
+    font-size: 23px;
+    padding: 3px;
+   
+    
+}
+
+
+.datos h2{
+    padding-bottom: 20px;
+}
+
+.misdispositivos_nombreytipo h2{
+    padding-bottom: 23px;
+}
+
+
+
+
+
+
+
+
+.menu-movil{
+    display: none;
+    
+}
+
+/* area menú movil */
+.lista-menu-movil{
+    display: flex;
+    list-style: none;
+    justify-content: flex-start;
+    flex-wrap: wrap; 
+   
+}
+
+.item-movil{  
+    padding: 0px;
+    width: 80px;
+ 
+   
+ 
+}
+
+
+.item-movil-link{  
+    display: block; 
+    flex-grow: 1;
+    text-align: center;
+    /* background-color:rgb(82, 124, 202); */
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    padding: 10px;  
+
+    background: linear-gradient(to bottom, rgba(255,255,255,0.3)0%, rgba(255,255,255,0.1)15%, transparent 50%, transparent 85%, rgba(255,255,255,0.1)100%);
+
+}
+
+.titulo_menumovil{
+    margin-top: 0.7em;
+    margin-left: 0.5em;
+    width: 100%;
+    display: block;
+
+}
+
+/* fin area menú movil */
+
+
+
+
+
+
+
+
+/*                           <!-- Ventana modal para guardar los datos en el servidor --> */
+
+/* Carácteristicas del contenedor del modal */
+.modal_guardar_contenido{
+    background-color: white;
+    width:300px;
+    padding: 10px 20px;
+    margin: 20% auto;
+    position: relative;
+    color: black;
+  }
+  
+  /* Características del modal como el color del fondo y su posición */
+  .modal_guardar{
+    background-color: rgba(0,0,0,.8);
+    position:fixed;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    opacity:0;
+    pointer-events:none;
+    transition: all 1s;
+  }
+  
+  /* Evento que dispara la ejecución del modal */
+  #modal_guardar:target{
+    opacity:1;
+    pointer-events:auto;
+  }
+  
+
+
+
+
+
+
+
+@media (max-width: 767px ) {
+
+    /* Carácteristicas del contenedor del modal para móviles*/
+    .modal_guardar_contenido{
+        background-color: white;
+        width:300px;
+        padding: 10px 20px;
+        margin: 60% auto;
+        position: relative;
+        color: black;
+    }
+
+
+
+
+
+
+
+    .mis_dispositivos, .datos{
+        /* display: none; */
+        width: 100%;
+        
+       
+    }
+
+    .mis_dispositivos{
+        margin-bottom: 10px;
+    }
+
+  
+
+    /* .misdispositivos_volver{
+        display: block;
+    } */
+
+    #mis_dispositivos{
+        width: 100%;
+
+        font-size: 2.5em;
+        outline: none;
+        height: 40px;
+      
+        
+        
+    }
+
+    /* .disponiblesmovil_agregar{
+        display: block;
+    } */
+
+
+
+    .contenedor-configuracion{
+          font-size: 90%;
+          min-height: 788px;
+          display: flex;  
+          flex-direction: column;
+          margin: 0 auto;
+          padding: 10px 30px;
+          position: relative;
+                
+       
+        }
+
+
+        .dispositivos_disponibles{
+            width: 100%;
+            outline: none;
+            padding-bottom: 10px;
+            /* height: 24%; */
+            
+        }
+
+
+
+        .lista-navegacion{
+            display: none;
+        }
+        
+ 
+
+          .menu-movil{
+             display: flex; 
+            
+            
+        }  
+
+
+        .panel-menu-movil{
+            position: absolute;
+            display: flex;
+            margin-top: 0;
+            justify-content: center;
+            align-items: flex-start;
+            top: 47px;
+            min-height: calc(740px + 47px);
+
+            left: 0;
+            width: 100%;
+            background-color: rgba(27, 27, 27, 0.842);
+            z-index: 2;
+            transition: margin-top 200ms 200ms ease-in-out;
+        }
+
+        /* botones javascript */
+        .activo{
+            margin-top: -2000px;
+            
+        }
+
+        /* .esconder_disponibles{
+            display: none;            
+        }
+
+        .aparecer_misdispositivos{
+            display: flex;   
+            flex-direction: column;   
+            width: 100%;
+            outline: none;
+            padding-bottom: 10px;
+            
+        } */
+
+        /* fin de botones javascript */
+       
+
+        .lista-navegacion{
+            
+            display: flex;
+            align-content: center;
+            margin-top: 40%;  
+            position: absolute; 
+          
+            
+
+          
+        }   
+
+        .item-navegacion-link{
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            box-shadow: 0px 0px 10px white;
+        }
+        
+
+
+
+}
+
+
+
+
+
+
+
+
+@media (min-height: 1024px) {
+
+    .mis_dispositivos, .datos{
+        /* display: none; */
+        width: 100%;
+       
+    }
+
+    .mis_dispositivos{
+        margin-bottom: 10px;
+    }
+
+  
+
+    /* .misdispositivos_volver{
+        display: block;
+    } */
+
+    #mis_dispositivos{
+        width: 100%;
+
+        font-size: 2.5em;
+        outline: none;
+        height: 40px;
+      
+        
+        
+    }
+
+    /* .disponiblesmovil_agregar{
+        display: block;
+    } */
+
+
+
+    .contenedor-configuracion{
+          font-size: 90%;
+          min-height: 100%;
+          display: flex;  
+          flex-direction: column;
+          margin: 0 auto;
+          padding: 10px 30px;
+                
+       
+        }
+
+
+        .dispositivos_disponibles{
+            width: 100%;
+            outline: none;
+            padding-bottom: 10px;
+            /* height: 24%; */
+            
+        }
+
+
+
+        .lista-navegacion{
+            display: none;
+        }
+        
+ 
+
+          .menu-movil{
+             display: flex; 
+            
+        }  
+
+
+        .panel-menu-movil{
+            position: absolute;
+            display: flex;
+            margin-top: 0;
+            justify-content: center;
+            align-items: flex-start;
+            top: 47px;
+            height:calc(100vh + 47px);
+            left: 0;
+            width: 100%;
+            background-color: rgba(27, 27, 27, 0.842);
+            z-index: 2;
+            transition: margin-top 200ms 200ms ease-in-out;
+        }
+
+        /* botones javascript */
+        .activo{
+            margin-top: -2000px;
+            
+        }
+
+        .esconder_disponibles{
+            display: none;            
+        }
+
+        .aparecer_misdispositivos{
+            display: flex;   
+            flex-direction: column;   
+            width: 100%;
+            outline: none;
+            padding-bottom: 10px;
+            
+        }
+
+        /* fin de botones javascript */
+       
+
+        .lista-navegacion{
+            
+            display: flex;
+            align-content: center;
+            margin-top: 40%;  
+            position: fixed; 
+           
+
+          
+        }   
+
+        .item-navegacion-link{
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            box-shadow: 0px 0px 10px white;
+        }
+        
+
+
+
+}
+
+
+
+
+
+  
+
+
+
+

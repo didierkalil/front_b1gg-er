@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/png" href="favicon.png" sizes="144x144"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0, viewport-fit=cover" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style_configuracion.css">
+  <title>b1gg-er</title>
+</head>
+
+
+<body>
+    <main>
+      <div class="contenedor">
+        <nav class="navegacion">
+            <nav class ="menu-movil">
+               <ul class="lista-menu-movil">
+                  <li class="item-movil" id="menu-movil"><a href="#" class="item-movil-link"><i class="large material-icons">menu</i></a></li>
+               </ul>
+               <h2 class="titulo_menumovil">Configuración</h2>
+            </nav>
+
+            <div class="panel-menu-movil activo" id="panelcito">
+           
+              <ul class="lista-navegacion">
+                  <li class="item-navegacion"><a href="index.html" class="item-navegacion-link"><i class="large material-icons">power</i>Mis dispositivos</a></li>
+                  <li class="item-navegacion" ><a href="administrar.html" class="item-navegacion-link"><i class="large material-icons">settings_input_component</i>Administrar</a></li>
+                  <li class="item-navegacion" ><a href="#" class="item-navegacion-link"><i class="large material-icons">settings</i>Configuración</a></li>
+                  <li class="item-navegacion"><a href="#" class="item-navegacion-link"><i class="large material-icons">insert_chart</i>Análizis de datos</a></li>
+              </ul>
+  
+            </div>
+        </nav>
+       
+        <div class="contenedor-configuracion">
+         
+            <section class="mis_dispositivos">
+                <div class="misdispositivos_nombreytipo">
+                    <h2>Mis dispositivos</h2>
+                    
+                    <div class="nombre">
+                    <label><h2>Nombre:</h2> </label>
+                    <input class="input_nombre" type="text" style="outline: none;" id="misdispositivos_inputbuscar"></input>
+                    </div>
+    
+                    <div class="tipo">
+                    <label><h2>Tipo:</h2> </label>
+                    <select id="misdispositivos_selecttype" class="selector_tipo">
+                        <!-- <option selected disabled hidden>Seleccionar tipo...</option> -->
+                        <option value="1">Interruptor</option>
+                        <option value="2">Sensor</option>
+                        <option value="3" selected>Todos</option>
+                    </select>
+                    </div>
+                    <button class="misdispositivos_buscar" id="misdispositivos_filtrar">Filtrar</button>
+                </div>
+    
+                <select id="mis_dispositivos" name="dispositivos" size="3" onchange="">
+                <option value="Televisor">Televisor</option>
+                <option value="luz-led">Luz-led</option>
+                <option value="heladera">Heladera</option>
+                </select>
+            
+            </section>
+
+            <section class="datos">
+                <div class="interruptor">
+                    <h2>Dispositivo</h2>        
+    
+                    <div class="nombre">
+                        <label><h5>Nombre:</h2> </label>
+                        <input class="input_nombre" type="text" style="outline: none;" id="misdispositivos_inputbuscar"></input>
+                    </div>
+
+                    <div class="nombre">
+                        <label><h5>Pin de salida:</h2> </label>
+                        <input class="input_nombre" type="text" style="outline: none;" id="misdispositivos_inputbuscar"></input>
+                    </div>
+
+                    <div class="nombre">
+                        <label><h5>Consumo en Watts:</h2> </label>
+                        <input class="input_nombre" type="text" style="outline: none;" id="misdispositivos_inputbuscar"></input>
+                    </div>
+                
+                   
+                </div>
+
+
+                <div class="temporizador">
+                 
+                    <h2>Temporizador</h2>
+                    <div class="grupo-boton">
+                    <label  id="etiqueta_temporizador">Apagado</label>
+                   
+                        <div class='toggle' id='switch1'>
+                            <div class='toggle-text-off'>OFF</div>
+                            <div class='glow-comp'></div>
+                            <div class='toggle-button'></div>
+                            <div class='toggle-text-on'>ON</div>
+                        </div>
+                    </div>
+
+                    <div class="temporizador1">
+                        <label>Horario-encendido</label>
+                        <div class="temporizadorEncendido">
+                        <input type="time" name="horarioEncendido" min="12:00" max="18:00" step="600" >
+                        </div>
+                    </div>
+
+                    
+                    <div class="temporizador2">
+                        <label>Horario-apagado </label>
+                        <div class="temporizadorApagado">
+                        <input type="time" name="horarioApagado" min="12:00" max="18:00" step="600" >
+                        </div>
+                    </div>
+
+                 
+
+                </div>
+                <div class="misdispositivos_botones">
+                          
+                  <button class="misdispositivos_guardar" onclick="location.href='#modal_guardar'">Guardar</button>
+          
+              </div>
+                
+            </section>
+           
+                
+        </div>
+      
+     
+
+    
+       
+        <footer>&copy; 2020 B1gg-er</footer>
+      </div>
+    </main>
+
+
+
+        <!-- Ventana modal para guardar los datos en el servidor -->
+        <div id="modal_guardar" class="modal_guardar">
+          <div class="modal_guardar_contenido">
+            <p>Está a punto de guardar los cambios, deséa continuar?</p>
+            <button style="margin-top: 10px; font-size: 2em; color: white; padding: 3px; width: 2em; float: left;" id="guardar_si">Si</button>
+            <button style="margin-top: 10px; font-size: 2em; color: white; padding: 3px; width: 2em; float: right;" onclick="location.href='#'" >No</button>
+          </div>  
+        </div>
+
+
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+            // Función para hacer toogle sobre el botón
+            // $('.toggle').click(function(e){
+            // e.preventDefault(); 
+            // $(this).toggleClass('toggle-on');
+            // });
+
+          // Funciones para el menu movil
+          $('#menu-movil').click(function(){
+          // $('#panelcito').attr("class", "");
+          const panel = document.querySelector('.panel-menu-movil');
+          panel.classList.toggle('activo');
+   
+          });
+
+
+
+            // Función para hacer toogle sobre el botón en el área Temporizador
+           $('#switch1').click(function(e){
+           e.preventDefault(); 
+           $(this).toggleClass('toggle-on');
+
+           var x = document.getElementById("etiqueta_temporizador");
+           if (x.innerHTML == "Apagado") {
+           x.innerHTML = "Encendido";
+           } else {
+           x.innerHTML = "Apagado";
+           }
+
+
+           });
+
+            // Funciones para el boton "eliminar de mis dispositivos" y devolver a la zona dispositivos disponibles
+            $('#misdispositivos_filtrar').click(function(){
+            
+            // Se ejecuta la función filtrar
+            var nombre;
+            var tipo;
+            alert('Ejecución de la funciona filtrar');
+
+            
+            });
+
+
+
+    </script>
+</body>
+</html>
+
+
+

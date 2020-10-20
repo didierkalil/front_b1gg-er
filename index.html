@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Recursos para los íconos del menú -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="favicon.png" sizes="144x144"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,height=device-height, viewport-fit=cover" />
+    <link rel="stylesheet" href="style.css">
+        
+    <title>b1gg-er</title>
+</head>
+<body>
+  <main>
+    <div class="contenedor">
+        <nav class="navegacion">
+
+          <nav class ="menu-movil">
+             <ul class="lista-menu-movil">
+                <li class="item-movil" id="menu-movil"><a href="#" class="item-movil-link"><i class="large material-icons">menu</i></a></li>
+             </ul>
+             <h2 class="titulo_menumovil">Mis dispositivos</h2>
+          </nav>
+          <div class="panel-menu-movil activo" id="panelcito">
+         
+            <ul class="lista-navegacion">
+                <li class="item-navegacion"><a href="index.html" class="item-navegacion-link"><i class="large material-icons">power</i>Mis dispositivos</a></li>
+                <li class="item-navegacion" ><a href="administrar.html" class="item-navegacion-link"><i class="large material-icons">settings_input_component</i>Administrar</a></li>
+                <li class="item-navegacion" ><a href="configuracion.html" class="item-navegacion-link"><i class="large material-icons">settings</i>Configuración</a></li>
+                <li class="item-navegacion"><a href="#" class="item-navegacion-link"><i class="large material-icons">insert_chart</i>Análizis de datos</a></li>
+            </ul>
+
+          </div>
+
+        </nav>
+      
+      <div class="contenedor-dispositivos">
+        <div class="supra_contenedor">
+          <section class="dispositivos">
+              <div class="arriba">
+                <h2>Dispositivos disponibles</h2>
+                <div class="buscador">
+                    <label><h2>Buscar:</h2> </label>
+                    <input class="inputado" type="text" style="outline: none;" id="inputado"></input>
+                </div>
+              </div>
+              <select id="dispositivos" name="dispositivos" size="3" onchange="mostrarValor(this);">
+                  <option value="Televisor">Televisor</option>
+                  <option value="luz-led">Luz-led</option>
+                  <option value="heladera">Heladera</option>
+              </select>
+          </section >
+
+          <section class="estado">
+              <div class="interruptor">
+                  <h2>Estado</h2>
+                  <label id="etiqueta_estado">Apagado</label>
+                  <div class='toggle' id='switch2'>
+                      <div class='toggle-text-off'>OFF</div>
+                      <div class='glow-comp'></div>
+                      <div class='toggle-button'></div>
+                      <div class='toggle-text-on'>ON</div>
+                  </div>
+          
+              </div>
+                <div class="temporizador">
+                    <div class="grupo-boton">
+                    <h2>Temporizador</h2>
+                    <label  id="etiqueta_temporizador">Apagado</label>
+                    <div class='toggle' id='switch1'>
+                        <div class='toggle-text-off'>OFF</div>
+                        <div class='glow-comp'></div>
+                        <div class='toggle-button'></div>
+                        <div class='toggle-text-on'>ON</div>
+                    </div>
+                    </div>
+
+                    <div class="temporizador1">
+                    <label>Horario-encendido</label>
+                    <div class="temporizadorEncendido">
+                    <input type="time" name="horarioEncendido" min="12:00" max="18:00" step="600" disabled >
+                    </div>
+                    </div>
+
+                    <div class="temporizador2">
+                    <label>Horario-apagado </label>
+                    <div class="temporizadorApagado">
+                    <input type="time" name="horarioApagado" min="12:00" max="18:00" step="600" disabled>
+                    </div>
+                    </div>
+              </div>
+         </div>
+        </section>
+       
+      </div>
+     
+        <footer >&copy; 2020 B1gg-er </footer>
+      </main>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+     
+// Función para hacer toogle sobre el botón en el área Estado
+           $('#switch2').click(function(e){
+           e.preventDefault(); 
+           $(this).toggleClass('toggle-on');
+
+           var x = document.getElementById("etiqueta_estado");
+           if (x.innerHTML == "Apagado") {
+           x.innerHTML = "Encendido";
+           } else {
+           x.innerHTML = "Apagado";
+           }
+
+
+           });
+
+
+// Función para hacer toogle sobre el botón en el área Temporizador
+           $('#switch1').click(function(e){
+           e.preventDefault(); 
+           $(this).toggleClass('toggle-on');
+
+           var x = document.getElementById("etiqueta_temporizador");
+           if (x.innerHTML == "Apagado") {
+           x.innerHTML = "Encendido";
+           } else {
+           x.innerHTML = "Apagado";
+           }
+
+
+           });
+
+
+// Función para mostrar el valor del item seleccionado en el listbox
+           var mostrarValor = function(x){
+          //  alert("El valor: "+x.value+" y el texto: "+x.options[x.selectedIndex].text +" numerito " + x.options[x.selectedIndex].index);
+           if (x.options[x.selectedIndex].index == 1) {
+            $('#switch' + 1).css('visibility', 'visible');
+            $('#switch2').css('visibility', 'visible');
+            $('#etiqueta_estado').css('visibility', 'visible');
+            $('#etiqueta_temporizador').css('visibility', 'visible');
+            
+           } else {
+            $('#switch' + 1).css('visibility', 'hidden');
+            $('#switch2').css('visibility', 'hidden');
+            $('#etiqueta_estado').css('visibility', 'hidden');
+            $('#etiqueta_temporizador').css('visibility', 'hidden');
+            
+           }
+           
+           }
+
+// Funciones para filtrar las busquedas en el listbox
+           $(function() {
+           var opts = $('#dispositivos option').map(function(){
+           return [[this.value, $(this).text()]];
+           });
+
+
+          $('#inputado').keyup(function(){
+          var rxp = new RegExp($('#inputado').val(), 'i');
+          var dispositivos = $('#dispositivos').empty();
+          opts.each(function(){
+          if (rxp.test(this[1])) {
+            dispositivos.append($('<option/>').attr('value', this[0]).text(this[1]));
+          }
+          });
+          });
+          });
+
+
+  // Funciones para el menu movil
+  $('#menu-movil').click(function(){
+    // $('#panelcito').attr("class", "");
+   const panel = document.querySelector('.panel-menu-movil');
+   panel.classList.toggle('activo');
+   
+    });
+
+
+
+
+    </script>
+</body>
+</html>

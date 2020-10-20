@@ -1,0 +1,414 @@
+.contenedor-administrar{
+    width: 100%;
+    height: 100%; 
+    padding: 30px 40px;
+    display: flex;
+    justify-content: center; 
+    align-items: flex-start;
+    background:linear-gradient(-30deg, #3aa4b7 0%, #f40303 50%, #262626 50%, #607d8b 100%);  
+}
+
+section .dispositivos_disponibles{
+    margin-right: 10px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;     
+}
+
+.disponibles_nombreytipo > h2, .misdispositivos_nombreytipo > h2{
+     text-shadow: 5px 5px 5px black;  
+}
+
+.input_nombre{
+    float: right;
+    width: 60%;
+    font-size: 23px; 
+    border-radius: 5px;
+    color:white;
+    background: transparent;
+    box-shadow: inset 0 0 25px rgba(0,0,0,0.2);
+}
+
+.selector_tipo{
+    float: right;
+    width: 60%;
+    font-size: 23px; 
+    border-radius: 5px;
+    color:white;
+    background: transparent;
+    box-shadow: inset 0 0 25px rgba(0,0,0,0.2);
+}
+
+.selector_tipo option{
+    background-color: rgba(16, 16, 17, 0.705);
+    font-size: 0.8em;
+}
+
+.disponibles_nombreytipo, .misdispositivos_nombreytipo {
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+
+
+.disponibles_nombreytipo h2, .misdispositivos_nombreytipo h2 {
+    padding-bottom: 13px;
+}
+
+
+.nombre, .tipo{
+    width: 100%;
+    display: flex; 
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.input_nombre, #select_type, #misdispositivos_selecttype  {
+    float: right;
+    width: 60%;
+    font-size: 23px; 
+}
+
+.disponibles_agregar, .misdispositivos_buscar, .disponiblesmovil_continuar{
+    float: right;
+    font-size: 23px;
+    padding: 3px;
+    margin-bottom: 10px;
+}
+
+.disponiblesmovil_continuar{
+    float: left;
+    font-size: 23px;
+    padding: 3px;
+    margin-bottom: 10px;
+}
+
+.misdispositivos_volver{
+    display: none;
+    float: left;
+    font-size: 23px;
+    padding: 3px;
+    margin-bottom: 10px;
+}
+
+
+#dispositivos_disponibles, #mis_dispositivos{
+    margin-right: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    font-size: 1.5em;
+    color: white;
+    outline: none;
+    height: 322px;
+    background: transparent;
+    box-shadow: inset 0 0 25px rgba(0,0,0,0.2);
+    position: relative; 
+}
+
+#dispositivos_disponibles::after,  #mis_dispositivos::after {
+    content:'';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    padding: 10px; 
+    border-radius: 5px; 
+    pointer-events: none;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.3)0%, rgba(255,255,255,0.1)15%, transparent 50%, transparent 85%, rgba(255,255,255,0.1)100%);
+}
+
+
+.disponibles_botones, .misdispositivos_botones{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.disponibles_botones button, .misdispositivos_botones button{
+    font-size: 23px;
+    padding: 3px;
+}
+
+.disponiblesmovil_agregar{
+    display: none;
+}
+
+.disponiblesmovil_continuar{
+    display: none;
+}
+
+.intermedio{
+    display: flex;
+    width: 225px;
+    margin: 0 20px;
+    margin-top: 0px;
+    position: relative;
+}
+
+.intermedio p{
+    border: solid white 1px;
+    padding: 5px;
+    border-radius: 9px;
+    margin-bottom: 10px;
+}
+
+.intermedio button{
+  font-size: 23px;
+  padding: 3px;
+  margin: 0 20px; 
+}
+
+
+.menu-movil{
+    display: none;
+}
+
+/* area menú movil */
+.lista-menu-movil{
+    display: flex;
+    list-style: none;
+    justify-content: flex-start;
+    flex-wrap: wrap; 
+}
+
+.item-movil{  
+    padding: 0px;
+    width: 80px;
+}
+
+
+.item-movil-link{  
+    display: block; 
+    flex-grow: 1;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    padding: 10px;  
+    background: linear-gradient(to bottom, rgba(255,255,255,0.3)0%, rgba(255,255,255,0.1)15%, transparent 50%, transparent 85%, rgba(255,255,255,0.1)100%);
+
+}
+
+
+/* fin area menú movil */
+
+
+
+
+
+
+
+
+
+
+
+/*                           <!-- Ventana modal para guardar los datos en el servidor --> */
+
+/* Carácteristicas del contenedor del modal */
+.modal_guardar_contenido{
+    background-color: white;
+    width:300px;
+    padding: 10px 20px;
+    margin: 20% auto;
+    position: relative;
+    color: black;
+  }
+  
+  /* Características del modal como el color del fondo y su posición */
+  .modal_guardar{
+    background-color: rgba(0,0,0,.8);
+    position:fixed;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    opacity:0;
+    pointer-events:none;
+    transition: all 1s;
+  }
+  
+  /* Evento que dispara la ejecución del modal */
+  #modal_guardar:target{
+    opacity:1;
+    pointer-events:auto;
+  }
+  
+  
+  
+  /*                     <!-- Ventana modal para error al agregar dispositivo disponible --> */
+  
+  .modal_erroragregar_contenido{
+      background-color: white;
+      width:300px;
+      padding: 10px 20px;
+      margin: 20% auto;
+      position: relative;
+      color: black;
+    }
+    
+    /* Características del modal como el color del fondo y su posición */
+    .modal_erroragregar{
+      background-color: rgba(0,0,0,.8);
+      position:fixed;
+      top:0;
+      right:0;
+      bottom:0;
+      left:0;
+      opacity:0;
+      pointer-events:none;
+      transition: all 1s;
+    }
+    
+    /* Evento que dispara la ejecución del modal */
+    #modal_erroragregar:target{
+      opacity:1;
+      pointer-events:auto;
+    }
+
+
+
+
+
+
+/* *********************Zona de media queries para dispositivos móviles **********************************/
+
+
+@media (max-width: 767px ),  (min-height: 1024px) {
+
+    /* Carácteristicas del contenedor del modal para moviles */
+    .modal_guardar_contenido{
+        background-color: white;
+        width:300px;
+        padding: 10px 20px;
+        margin: 60% auto;
+        position: relative;
+        color: black;
+    }
+
+
+     /*                     <!-- Ventana modal para error al agregar dispositivo disponible --> */
+     /* Modifico la altura de la ventana modal en los dispositivos móviles */
+    .modal_erroragregar_contenido{
+        background-color: white;
+        width:300px;
+        padding: 10px 20px;
+        margin: 60% auto;
+        position: relative;
+        color: black;
+    }
+  
+
+    .mis_dispositivos, .intermedio{
+        display: none;
+    }
+
+    .misdispositivos_volver{
+        display: block;
+    }
+
+    #dispositivos_disponibles{
+        width: 100%;
+        font-size: 1.5em;
+        outline: none;
+        height: 322px;
+        
+        
+    }
+
+    .disponiblesmovil_agregar{
+        display: block;
+    }
+
+    .disponiblesmovil_continuar{
+        display: block;
+    }
+
+
+
+    .contenedor-administrar{
+          font-size: 90%;
+          display: flex;  
+          flex-direction: column;
+          margin: 0 auto;
+          padding: 10px 30px;
+        }
+
+
+        .dispositivos_disponibles{
+            width: 100%;
+            outline: none;
+            padding-bottom: 10px;
+        }
+
+
+        .lista-navegacion{
+            display: none;
+        }
+        
+ 
+
+          .menu-movil{
+             display: flex; 
+            
+        }  
+
+
+        .panel-menu-movil{
+            position: absolute;
+            display: flex;
+            margin-top: 0;
+            justify-content: center;
+            align-items: flex-start;
+            top: 47px;
+            height:calc(100% - 47px);
+            left: 0;
+            width: 100%;
+            background-color: rgba(27, 27, 27, 0.842);
+            z-index: 2;
+            transition: margin-top 200ms 200ms ease-in-out;
+        }
+
+        /* botones javascript para dispositivos móviles */
+        .activo{
+            margin-top: -2000px;
+            
+        }
+
+        .esconder_disponibles{
+            display: none;            
+        }
+
+        .aparecer_misdispositivos{
+            display: flex;   
+            flex-direction: column;   
+            width: 100%;
+            outline: none;
+            padding-bottom: 10px;
+        }
+
+        /* fin de botones javascript para dispositivos móviles*/
+       
+
+        .lista-navegacion{
+            display: flex;
+            align-content: center;
+            margin-top: 40%;  
+            position: fixed;   
+        }   
+
+        .item-navegacion-link{
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            box-shadow: 0px 0px 10px white;
+        }
+        
+
+
+
+}
+
